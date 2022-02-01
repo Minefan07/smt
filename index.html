@@ -56,95 +56,21 @@
             }
         </style>
     </head>
-    <body onload="load()">
-        <script>
-            // functions for showing time
-            function getTestTime15() {
-                document.getElementById("timel").innerHTML = "15 seconds";
-            }
-            function getTestTime10() {
-                document.getElementById("timel").innerHTML = "10 seconds";
-            }
-            function getTestTime5() {
-                document.getElementById("timel").innerHTML = "5 seconds";
-            }
-            function getTestTime3() {
-                document.getElementById("timel").innerHTML = "3 seconds";
-            }
-            function getTestTime2() {
-                document.getElementById("timel").innerHTML = "2 seconds";
-            }
-            function removeButtons() {
-                document.getElementById("pickTestLength").style.display = "none";
-                document.getElementById("test").style.display = "block";
-            }
-
-            // load the first equation
-            
-            function load() {
-                var x = Math.floor(Math.random() * 16);
-                var y = Math.floor(Math.random() * 16);
-                var a = x + " * " + y;
-                document.getElementById("equation").innerHTML = a;
-                document.getElementById("pointnum").innerHTML = "0";
-            }
-            
-            // generate equations after first generation
-
-            function numGen() {
-                var x = Math.floor(Math.random() * 16);
-                var y = Math.floor(Math.random() * 16);
-                var a = x + " * " + y;
-                var aa = x*y;
-                var answer = document.getElementById("answer");
-                document.getElementById("equation").innerHTML = a;
-                document.getElementById("timelapsed").innerHTML = answer.value + " and " + aa;
-            }
-
-            // add to point amount
-            
-            function addOneToPoints() {
-                document.getElementById('pointnum').innerHTML++;
-            }
-            
-            //check if answer is correct; doesn't work
-            
-            function checkAnswer() {
-                var answe1 = document.getElementById("answer").value;
-                var answe2 = x*y;
-                if (answe1 === answe2) {
-                    alert("dfkajldskfjadlkfjlakdjflak");
-                    document.getElementById("timelapsed").innerHTML = answer.value + " and " + aa;
-                    addOneToPoints();
-                    numGen();
-                } else if (answe1 == null) {
-                    alert("please input a number");
-                } else {    
-                    alert("Try Again.");
-                }
-            }
-        </script>
-        <div id="pickTestLength" class="pickTestLength">
-            Please choose how long you would like to answer each question.<br>
-            <!-- time selectors -->
-            <button id="fifteens" class="fifteens" title="You will have 15 seconds to answer correctly each time" onclick="getTestTime15(), removeButtons()">15s</button>
-            <button id="tens" class="tens" title="You will have 10 seconds to answer correctly each time" onclick="getTestTime10(), removeButtons()">10s</button>
-            <button id="fives" class="fives" title="You will have 5 seconds to answer correctly each time" onclick="getTestTime5(), removeButtons()">5s</button>
-            <button id="threes" class="threes" title="You will have 3 seconds to answer correctly each time" onclick="getTestTime3(), removeButtons()">3s</button>
-            <button id="twos" class="twos" title="You will have 2 seconds to answer correctly each time" onclick="getTestTime2(), removeButtons()">2s</button>
-        </div>
-        <div id="test" class="test">
-            The amount of time given to answer each question is <span id="timel"></span>.<br>
-            <!-- equation -->
-            <span id="equation"><span id="x"></span> * <span id="x"></span></span>
-            <!-- answer input -->
-            <br><input type="number" id="answer">
-            <!-- Answer-check button -->
-            <input type="button" onclick="checkAnswer();" value="Check">
-        </div>
-        <!-- point counter -->
-        <div id="points" class="points"><span id="pointnum">0</span> points</div>
-        <!-- time counter - doesn't work -->
-        <div id="timelapsed" class="timelapsed">0:00</div>
-    </body>
-</html>
+		<p id="A">
+			Please choose your desired time!
+		</p>
+		<a href="./15.html">
+		<button>15 Seconds</button>
+		</a>
+		<a href="./15.html">
+		<button>10 Seconds</button>
+		</a>
+		<a href="./15.html">
+		<button>5 Seconds</button>
+		</a>
+		<a href="./15.html">
+		<button>3 Seconds</button>
+		</a>
+		<a href="./15.html">
+		<button>2 Seconds</button>
+		</a>
