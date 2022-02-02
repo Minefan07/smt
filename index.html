@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="icon" type="image/x-icon" href="icon/favicon.jpg">
+        <title>Simple Multiplication Tester!</title>
+        <style>
+            body {
+                font-family: console;
+                font-size: 24px;
+            }
+
+            .buttons {
+                font-family: console;
+                font-size: 24px;
+            }
+
+            @font-face {
+                font-family: console;
+                src: url("fonts/console.ttf");
+            }
+
+            .test {
+                display: none;
+            }
+
+            .points {
+                position: fixed;
+                right: 10px;
+                top: 10px;
+            }
+
+            .timelapsed {
+                position: fixed;
+                right: 10px;
+                top: 34px;
+            }
+        </style>
+    </head>
+    <body>
+		<p id="A">
+			Please choose your desired time!
+		</p>
+		<button onclick="window.open(
+              './15s.html', '_blank')" class="buttons">15 Seconds</button>
+		<button onclick="window.open(
+              './10s.html', '_blank')" class="buttons">10 Seconds</button>
+		<button onclick="window.open(
+              './5s.html', '_blank')" class="buttons">5 Seconds</button>
+		<button onclick="window.open(
+              './3s.html', '_blank')" class="buttons">3 Seconds</button>
+		<button onclick="window.open(
+              './2s.html', '_blank')" class="buttons">2 Seconds</button>
+    </body>
+</html>

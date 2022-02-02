@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="icon" type="image/x-icon" href="icon/favicon.jpg">
+    <title>Simple Multiplication Tester!</title>
+    <style>
+        body {
+            font-family: console;
+            font-size: 24px;
+        }
+
+        .buttons {
+            font-family: console;
+            font-size: 24px;
+        }
+        
+        .input {
+            font-family: console;
+            font-size: 24px;
+        }
+
+        @font-face {
+            font-family: console;
+            src: url("fonts/console.ttf");
+        }
+
+        .test {
+            display: none;
+        }
+
+        .points {
+            position: fixed;
+            right: 10px;
+            top: 10px;
+        }
+
+        .timelapsed {
+            position: fixed;
+            right: 10px;
+            top: 34px;
+        }
+    </style>
+</head>
+<body>
+    <p>You have <span id="countDown"></span> seconds left!</p>
+    <p><span id="numOne">0</span>*<span id="numTwo">0</span></p>
+    <input type="number" id="ans" class="input">
+    <button onClick="check(), document.getElementById('myInput').value='' " class="buttons">Check</button>
+    <p class="points"><span id="points">0</span> points</p>
+    <p class="timelapsed">Time elapsed: <span id="seconds">0</span></p>
+    <script>
+let g = 3
+function randomInt(max) {
+	return Math.floor(Math.random() * max)
+}
+let x = randomInt(16)
+let y = randomInt(16)
+let z = document.getElementById("numOne")
+let a = document.getElementById("numTwo")
+let totalTimeSec = 00
+let totalTimeMin = 0
+let b = document.getElementById("seconds")
+let normTime = document.getElementById("countDown")
+let qTime = g
+let ans = document.getElementById("ans")
+let points = document.getElementById("points")
+let pointsNum = 0
+function sleep(milliseconds) {
+  const date = Date.now();
+  let currentDate = null;
+  do {
+    currentDate = Date.now();
+  } while (currentDate - date < milliseconds);
+}
+function gLol(num) {
+	g = num
+} 
+function start() {
+	x = randomInt(16)
+	y = randomInt(16)
+	z.innerHTML = x
+	a.innerHTML = y
+	qTime = g
+	time()
+}
+function restart() {
+	x = randomInt(16)
+	y = randomInt(16)
+	z.innerHTML = x
+	a.innerHTML = y
+	qTime = g
+}
+start()
+function check() {
+	if (ans.value == x*y) {
+		pointsNum += 1
+		points.innerHTML = pointsNum
+		restart()
+	} else {
+		alert("Try again!")
+	}
+}
+async function time() {
+	totalTimeSec += 1
+	qTime -= 1
+	b.innerHTML = totalTimeSec
+	normTime.innerHTML = qTime
+	if (qTime == 0) {
+		alert("Time is up! Returning to home page, your score was " + pointsNum)
+		window.location = "./index.html"
+	}
+	setTimeout(time, 1000)
+}
+    </script>
+</body>
